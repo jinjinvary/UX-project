@@ -242,7 +242,7 @@ section .do-me .do-inner:hover i{
     color: white;
 }
 .bg{
-    background: url('/images/background.jpg');
+    background: url('images/background.jpg');
     background-size: cover;
     background-attachment: fixed;
     height: 650px;

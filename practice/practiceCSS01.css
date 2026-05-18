@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, 
+body{
+    width: 100%;
+    overflow-x: clip;
+    background: #fff;
+    color: #222;
+}
+
+header{
+    display: flex;
+    align-items: flex-end;
+    /* justify-items: center; */
+    flex-direction: column;
+    border-bottom: 4px solid #222;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    gap: 0;
+    z-index: 999;
+    max-height: 40vh;
+}
+
+header h1{
+    font-family: "Anton", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+    font-size: 4.5rem;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+#subtitle{
+    font-family: "Anton", sans-serif;
+    font-size: 2rem;
+    color: #b83227;
+}
+
+.marketInfo{
+    font-family: "Bebas Neue", sans-serif;
+    /* font-weight: 400; */
+    font-style: normal;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+header #timeRow{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    width: 100%;
+    align-self: stretch;
+
+    flex-wrap: wrap;
+    gap: 10px;
+}   
+
+.marketTime{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.2rem; /* 필요시 크기 조절 */
+}
+
+/* main design start */
+main section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    width: 50vw;
+    gap: 20px;   
+    padding: 30px 40px;
+    margin: 0 auto; /*중앙 정렬*/
+}
+
+main section h2{
+    font-family: "Anton", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    grid-column: 1 / -1;
+
+    border-bottom: 3px solid #222;
+}
+
+main section:nth-of-type(1) .menu-item{
+    border: 2px solid #222;
+    padding: 8px 16px;
+    box-shadow: 5px 5px 0 #222;
+    transition: transform 1s;
+}
+
+main section:nth-of-type(1) .menu-item:hover{
+    transform: scale(1.1);
+}
+
+.menu-item h3{
+    font-family: "Bebas Neue", sans-serif;
+	font-size: 30px;
+	letter-spacing: 1px;
+}
+
+.menu-item p:first-of-type{
+    font-family: "Anton", sans-serif;
+    font-size: 22px;
+    color: #b83227;
+    padding-left: 4px;
+}
+
+main section:nth-of-type(2) p{
+    grid-column: 1 / -1;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.7px;
+}
+
+main section .side-item{
+    grid-column: 1 / -1;
+    border: 2px solid #222;
+    padding: 8px;
+    text-transform: uppercase;
+    transition: transform 1s;
+}
+
+main section .side-item:hover{
+    transform: scale(1.1);
+}
+
+.side-item h3{
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 22px;
+}
+
+@media (max-width: 700px) {
+	header {
+		justify-items: center;
+		text-align: center;
+		padding: 25px 20px;
+	}
+
+	header h1 {
+		font-size: 48px;
+	}
+
+	header ul {
+		text-align: center;
+	}
+
+	section {
+		grid-template-columns: 2fr;
+		padding: 25px 20px;
+		width: 100%;
+	}
+
+	.menu-item {
+		width: 100%;
+	}
+}

@@ -266,7 +266,7 @@ section.portfolio .portfolio-inner{
     margin-bottom: 3rem;
 }
 /* 3번째마다 margin-right 0 적용 */
-section.portfolio .portfolio-inner:nth-child(3n){
+section.portfolio a:nth-child(3n) .portfolio-inner{
     margin-right: 0;
 }
 /* 이미지 크기가 부모 요소를 넘지 않도록 100%로 지정 */
@@ -403,7 +403,7 @@ header.active{
         width: 48%;
         margin-right: 0;
     }
-    section .portfolio-me .portfolio-inner:nth-child(2n+1){
+    section .portfolio-me a:nth-child(2n+1) .portfolio-inner{
         margin-right: 4%;
     }
     section.contact .contact-me .left{

@@ -155,17 +155,14 @@ main section .side-item:hover{
 		font-size: 48px;
 	}
 
-	header ul {
-		text-align: center;
-	}
-
 	section {
-		grid-template-columns: 2fr;
+		grid-template-columns: repeat(1,1fr);
 		padding: 25px 20px;
 		width: 100%;
+		margin: 0 auto;
 	}
 
 	.menu-item {
-		width: 100%;
+		max-width: 100%;
 	}
 }

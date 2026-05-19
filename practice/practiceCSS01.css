@@ -155,7 +155,7 @@ main section .side-item:hover{
 		font-size: 48px;
 	}
 
-	section {
+	main section {
 		grid-template-columns: repeat(1,1fr);
 		padding: 25px 20px;
 		width: 100%;

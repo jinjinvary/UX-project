@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+.logo-font{
+    font-family: "Irish Grover", system-ui;
+    font-weight: 400;
+    font-style: normal;;
+}
+
+a{
+    text-decoration: none;
+    color: #111;
+}
+
+button{
+    /* 버튼 초기화 */
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+body{
+    /* overflow: clip; */
+    /* 나중에 활성화 예정 */
+    background-image: url(images/bg.png);
+}
+
+/* 전체 설정 끝 */
+/* Header 영역 시작 */
+
+header{
+    /* background: #e4e4e4; */
+    /* layer 확인용 설정 삭제 예정 -> opacity:0배경설정*/
+    position:sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header .nav-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-bar{
+    padding: 16px 8px 0 8px;
+}
+
+.nav-bar ul{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    align-items: flex-start;
+    padding-top: 18px;
+    padding-bottom: 15px;
+}
+
+.nav-bar ul li{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar ul:first-child li:first-child{
+    padding-left: 9px;
+}
+
+header .nav-bar ul:first-child li button{
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+header .nav-bar .nav-center a{
+    display: flex;
+    align-items: center;
+    gap: 9.99px;
+
+    width: 127.47px;
+    height: 59.06px;
+
+    color: #000;
+    font-size: 30px;
+}
+
+header .nav-bar .nav-center a img{
+    width: 40.52px;
+    height: 58.82px;
+}
+
+.nav-bar ul:last-child{
+    gap: 0;
+}
+
+/* Header 영역 끝 */
+/* main 영역 시작 */
+
+main .start-container{
+    height: 450vh;
+    position: relative;
+    background: #e4e4e4;
+}
+
+main .start-container .sticky{
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+main .start-container .sticky .start-page{
+    display: flex;
+    gap: 55.39px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex: 0 0 auto;
+
+}
+
+main .start-container .sticky .start-page img{
+    width: 209.72px;
+    height: 306.42px;
+}
+
+main .start-container .sticky .start-page h1{
+    font-size: 100px;
+    font-weight: normal;
+}

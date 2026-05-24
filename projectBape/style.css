@@ -36,17 +36,16 @@ button{
 }
 
 body{
-    /* overflow: clip; */
-    /* 나중에 활성화 예정 */
     background-image: url(images/bg.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* 전체 설정 끝 */
 /* Header 영역 시작 */
 
 header{
-    /* background: #e4e4e4; */
-    /* layer 확인용 설정 삭제 예정 -> opacity:0배경설정*/
     position:sticky;
     top: 0;
     z-index: 999;
@@ -111,9 +110,8 @@ header .nav-bar .nav-center a img{
 /* main 영역 시작 */
 
 main .start-container{
-    height: 450vh;
+    height: 500vh;
     position: relative;
-    background: #e4e4e4;
 }
 
 main .start-container .sticky{
@@ -129,16 +127,128 @@ main .start-container .sticky .start-page{
     align-items: center;
     height: 100%;
     width: 100%;
-    flex: 0 0 auto;
 
 }
 
 main .start-container .sticky .start-page img{
     width: 209.72px;
     height: 306.42px;
+    position: relative;
 }
 
 main .start-container .sticky .start-page h1{
     font-size: 100px;
     font-weight: normal;
+    position: relative;
+    opacity: 0;
+    width: 0;
+    white-space: nowrap;
+}
+
+/* article 작성 끝 */
+/* site nav 시작 */
+
+main .site-nav{
+    display: grid;
+    margin:  0 auto ;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    column-gap: 5rem;
+    row-gap: 4rem;
+
+    place-content: center;
+    height: 100vh;
+    width: 100%;
+    overflow: clip;
+
+
+}
+
+main .site-nav .nav-item img{
+    position: absolute;
+    z-index: -1; 
+    /* absolute 이미지 다른 것보다 아래로 보내기 */
+
+    pointer-events: none;
+}
+
+main .site-nav .nav-item:nth-of-type(1){
+    position: relative;
+    justify-self: end;
+    right: 5rem;
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+
+    width: 18rem;
+    aspect-ratio: 1 / 1;
+    background: #DDC970;
+    /* display: inline-block; */
+    border-radius: 50%;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #463011;
+    font-size: 70px;
+}
+main .site-nav .nav-item:nth-of-type(1) img{
+    left: -27rem;
+    top: 10rem;
+    clip-path: inset(0 0 100% 100%);
+    transition: none;/* JS 애니메이션을 위해 트랜지션은 끕니다 */
+}
+
+main .site-nav .nav-item:nth-of-type(2){
+    position: relative;
+    grid-row: 2 / 6;
+    grid-column: 2 / 3;
+
+    width: 20rem;
+    aspect-ratio: 1 / 1;
+    background: #463011;
+    /* display: inline-block; */
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #DDC970;
+    font-size: 70px;
+}
+
+main .site-nav .nav-item:nth-of-type(2) img{
+    left: 4rem;
+    top: 0.5rem;
+    clip-path: inset(0 100% 0 0)
+}
+
+main .site-nav .nav-item:nth-of-type(3){
+    position: relative;
+    justify-self: center; /*원모양 자체 가운데 정렬*/
+    right: 5rem;
+    grid-row: 5 / -1;
+    grid-column: 1 / -1;
+
+    width: 18rem;
+    aspect-ratio: 1 / 1;
+    background: #DDC970;
+    /* display: inline-block; */
+    border-radius: 50%;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #463011;
+    font-size: 70px;
+}
+
+main .site-nav .nav-item:nth-of-type(3) img{
+    left: -7rem;
+    top: 2.5rem;
+    clip-path: inset(0 0 100% 0);
 }

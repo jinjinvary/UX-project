@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+.logo-font{
+    font-family: "Irish Grover", system-ui;
+    font-weight: 400;
+    font-style: normal;;
+}
+
+a{
+    text-decoration: none;
+    color: #111;
+}
+
+button{
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+body{
+    background-image: url(images/bg.png);
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+}
+/* 전체 설정 끝 */
+/* Header 영역 시작 */
+
+header{
+    position:sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header .nav-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-bar{
+    padding: 16px 8px 0 8px;
+}
+
+.nav-bar ul{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    align-items: flex-start;
+    padding-top: 18px;
+    padding-bottom: 15px;
+}
+
+.nav-bar ul li{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar ul:first-child li:first-child{
+    padding-left: 9px;
+}
+
+header .nav-bar ul:first-child li button{
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+header .nav-bar .nav-center a{
+    display: flex;
+    align-items: center;
+    margin-right: 17px;
+    gap: 9.99px;
+
+    width: 127.47px;
+    height: 59.06px;
+
+    color: #000;
+    font-size: 30px;
+}
+
+header .nav-bar .nav-center a img{
+    width: 40.52px;
+    height: 58.82px;
+}
+
+.nav-bar ul:last-child{
+    gap: 0;
+}
+/* Header영역 끝 */
+/* main 영역 시작 */
+main section h1 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1.3px;
+    font-weight: normal;
+    font-size: 1.3rem;
+    color: #222;
+    margin-top: 59px;
+    margin-bottom: 44px;
+    cursor: default;
+}
+
+/* Slider 스타일 추가 */
+.exhibit-slider-wrapper {
+    position: relative;
+    width: calc(100% - 34px);
+    margin: 0 17px;
+    overflow: hidden;
+    background: rgba(255, 255, 0, 0.01); 
+
+    /* 전시 유리 효과 */
+    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    
+}
+
+.exhibit-flex {
+    display: flex;
+    transition: transform 0.4s ease-out;
+}
+
+.exhibit-item {
+    flex: 0 0 calc(100% / 3);
+    padding: 49px 32px 36px;
+    filter: blur(5px);
+    transition: 
+        filter 0.4s ease-out,
+        transform 0.4s ease-out;
+    transform: scale(0.7);
+}
+
+.exhibit-item.active {
+    filter: blur(0);
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.exhibit-item img {
+    width: 23.125rem;
+    height: 28.25rem;
+    transform: translateX(10%); /*시각적 중앙 정렬*/
+    border-radius: 8px;
+}
+
+.slider-btn{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    /* background: rgba(255, 255, 255, 0.5); */
+    color: white;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.slider-btn img{
+    transform: translateY(25%) scale(2);
+}
+.prev-btn {
+    left: 44px;
+    transform: rotate(90deg);
+}
+
+.next-btn {
+    right: 44px;
+    transform: rotate(270deg);
+}
+/* Slider 효과 끝 */
+/* gallery 2장 전시 */
+
+.gallery {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.gallery img{
+    aspect-ratio: 684 / 905;
+    width: 50rem;
+}
+/* fist section 끝 */
+/* second section 시작 */
+
+main section .card-container {
+    position: flex;
+    justify-content: center;
+
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    row-gap: 6.25rem;
+    column-gap: 4rem;
+}
+
+main section .card-container .card:nth-of-type(3n+1) {
+    margin-left: 3.375rem;
+}
+
+main section .card-container .card:nth-of-type(3n+2) {
+    transform: translateX(0.5rem);
+}
+
+main section .card-container .card:nth-of-type(3n) {
+    margin-right: 1.875rem;
+}
+
+main section .card-container .card {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: inset 0 -1px 4px 0.5px rgba(0, 0, 0, .25);
+    transform: scale(1);
+    transition: transform 0.2s ease-out;
+
+    cursor: pointer;
+}
+
+main section .card-container .card:active {
+    transform: scale(1.068);
+}
+
+main section .card-container .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px; /* 테두리 두께 */
+    border-radius: inherit;
+    background: linear-gradient(
+        to bottom,
+        #e4e4e4 0%,
+        #7e7e7e 100%
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+main section .card-container .card img {
+    height: 28.25rem;
+    aspect-ratio: 23 / 28;
+
+    padding: 1rem 0.5rem;
+}
+
+main section .card-container .card .card-bar {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 1.34375rem 0.625rem 0;
+}
+
+main section .card-container .card .card-detail{
+    display: relative;
+    text-align: center;
+    margin-top: 1.28125rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+/* Second section 끝 */
+/* Third section 시작 */
+
+main section .brand-container{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(255, 255, 0, 0.01); 
+    margin-bottom: 5rem;
+}
+
+main section .brand-container .brand-flex{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.brand-item img{
+    width: 18.75rem;
+    height: 18.75rem;
+}
+
+/* Third section 끝 */
+/* footer 영역 시작 */
+footer {
+    color: white;
+    background: #000;
+    padding: 2rem 2rem 2.25rem 5rem ;
+}
+
+footer h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+
+footer .line {
+    border-top: 1px solid #fff;
+    width: 22.5rem;
+    margin-top: 0.625rem;
+    margin-bottom: 0.75rem;
+    border-radius: 4px;
+}
+
+footer p {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+footer .sns button {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2.89875rem;
+}
+
+.companyInfo {
+    margin-top: 3.375rem;
+}
+
+footer .info a {
+    color: #fff;
+    margin-right: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.info a:last-of-type {
+    line-height: 2;
+}
+
+.info .companyInfo a {
+    text-decoration: underline;
+}
+

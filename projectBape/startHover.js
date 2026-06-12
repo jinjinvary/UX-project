@@ -7,30 +7,30 @@ const thirdDecoImg = navItem[2].querySelector("img");
 
 hover(navItem[0],() => {
     animate(firstDecoImg, {
-        clipPath: "inset(0 0 0% 0%)"
+        opacity: 1,
     }, {duration: 0.5, easing: "ease-out"})
 
     return () => animate(firstDecoImg, {
-        clipPath: "inset(0 0 100% 100%)"
-    }, {duration: 0.3})
+        opacity: 0,
+    }, {duration: 0.1})
 })
 
 hover(navItem[1],() => {
     animate(secondDecoImg, {
-        clipPath: "inset(0 0% 0% 0%)"
+        opacity: 1,
     }, {duration: 0.5, easing: "ease-out"})
 
     return () => animate(secondDecoImg, {
-        clipPath: "inset(0 100% 0 0)"
-    }, {duration: 0.3})
+        opacity: 0,
+    }, {duration: 0.1})
 })
 
 hover(navItem[2],() => {
     animate(thirdDecoImg, {
-        clipPath: "inset(0 0 0% 0)"
+        opacity: 1,
     }, {duration: 0.5, easing: "ease-out"})
 
     return () => animate(thirdDecoImg, {
-        clipPath: "inset(0 0 100% 0)"
-    }, {duration: 0.3})
+        opacity: 0,
+    }, {duration: 0.1})
 })

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440, initial-scale=1.0">
+    <link rel="stylesheet" href="logInStyle.css">
+    <title>로그인 화면</title>
+</head>
+<body>
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="#">신규</a><button><img src="images/icon_more.svg"></button></li>
+                    <li><a href="#">남성</a><button><img src="images/icon_more.svg"></button></li>
+                    <li><a href="#">여성</a><button><img src="images/icon_more.svg"></button></li>
+                    <li><a href="#">협업</a><button><img src="images/icon_more.svg"></button></li>
+                </ul>
+                <div class="nav-center">
+                    <a href="index.html" class="logo-font"><img src="images/bape.svg" alt="메인페이지로 돌아가기"></a>
+                </div>
+                <ul>
+                    <li><button><img src="images/search.png" alt="검색"></button></li>
+                    <li><button><img src="images/register.png" alt="개인정보"></button></li>
+                    <li><button><img src="images/buy.png" alt="장바구니"></button></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <div class="logIn-container">
+                    <h1>로그인</h1>
+                    <form action="login_process.php" method="post">
+                        <label for="username" />
+                        <input type="text" id="username" name="username" placeholder="ID" required>
+                        <br>
+                        <label for="password" />
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <br>
+                        <button type="submit">로그인</button>
+                        <div class="register-container">
+                        <a href="register.html">회원가입</a>
+                        </div>
+                        <img src="images/babyMilo.svg" alt="">
+                    </form>
+                </div>
+            </section>
+</body>
+</html>

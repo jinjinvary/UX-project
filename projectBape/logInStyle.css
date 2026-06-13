@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+.logo-font{
+    font-family: "Irish Grover", system-ui;
+    font-weight: 400;
+    font-style: normal;;
+}
+
+a{
+    text-decoration: none;
+    color: #111;
+}
+
+button{
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+body{
+    background-image: url(images/bg.png);
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+}
+/* 전체 설정 끝 */
+/* Header 영역 시작 */
+
+header{
+    position:sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header .nav-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-bar{
+    padding: 16px 8px 0 8px;
+}
+
+.nav-bar ul{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    align-items: flex-start;
+    padding-top: 18px;
+    padding-bottom: 15px;
+}
+
+.nav-bar ul li{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar ul:first-child li:first-child{
+    padding-left: 9px;
+}
+
+header .nav-bar ul:first-child li button{
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+header .nav-bar .nav-center a{
+    display: flex;
+    align-items: center;
+    margin-right: 17px;
+    gap: 9.99px;
+
+    width: 127.47px;
+    height: 59.06px;
+
+    color: #000;
+    font-size: 30px;
+}
+
+header .nav-bar .nav-center a img{
+    width: 40.52px;
+    height: 58.82px;
+}
+
+.nav-bar ul:last-child{
+    gap: 0;
+}
+/* Header영역 끝 */
+/* Main 영역 시작 */
+main section .logIn-container {
+    display: flex;
+    flex-direction: column;     
+    justify-content: center;
+    align-items: center;
+
+    position: relative; 
+    width: 39.25rem;
+    height: 32.5rem;
+    background: #fff;
+    border-radius: 8px;
+
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: none;
+}
+
+main section .logIn-container h1 {
+    font-weight: bold;
+    font-size: 4rem;
+    color: #222;
+    margin-bottom: 1.5rem;
+    
+}
+
+main section .logIn-container form input {
+    padding-left: 2.25rem;
+    margin-bottom: 1.5rem;
+
+    width: 32.125rem;
+    height: 5.3125rem;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+
+    font-size: 1.5rem;
+    font-weight: light;
+}
+
+
+main section .logIn-container form button {
+    display: block;
+    margin-bottom: 1.9375rem;
+    width: 32.125rem;
+    height: 5.3125rem;
+    background: #463011;
+    color: #fff;
+    border-radius: 4px;
+
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+
+    font-family: "Roboto", sans-serif;
+}
+
+main section .logIn-container form .register-container {
+    display: flex;
+    justify-content: right;
+}
+
+main section .logIn-container form .register-container a {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    color:#000;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    /* position: relative;
+    bottom: 1.5rem; */
+}
+
+main section .logIn-container form img {
+    width: 11.125rem;
+    height: 13.5rem;
+    position:absolute;
+
+    top: 0;
+    left: 90%;
+}
+

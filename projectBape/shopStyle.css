@@ -72,13 +72,52 @@ header .nav-bar{
 .nav-bar ul li{
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.nav-bar ul li a{
+    padding-right: 0.25rem;
+}
+/* 여기서부터 다시 손봐야 할듯 */
+
+.nav-bar ul li .nav-hover {
+    position: absolute;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+
+    width: 14.375rem;
+    height: auto;
+    background: #EBEAEA;
+    border-radius: 4px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-bar ul li:hover .nav-hover {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-bar ul li .nav-hover li:first-child{
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.nav-bar ul li .nav-hover li + li {
+
+    width: auto;
+    padding: 0.5rem 0.5rem;
+
 }
 
 .nav-bar ul:first-child li:first-child{
     padding-left: 9px;
 }
 
-header .nav-bar ul:first-child li button{
+header .nav-bar ul:first-child li img{
     top: 0;
     display: flex;
     align-items: center;

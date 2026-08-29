@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>가위바위보</title>
+    <style>
+      #computer {
+        width: 165px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="computer"></div>
+    <div>
+      <button id="scissors" class="btn">가위</button>
+      <button id="rock" class="btn">바위</button>
+      <button id="paper" class="btn">보</button>
+    </div>
+    <div>
+      내 점수:
+      <span id="score"></span>
+    </div>
+    <script>
+      const $computer = document.querySelector("#computer");
+      const $score = document.querySelector("#score");
+      const $rock = document.querySelector("#rock");
+      const $scissors = document.querySelector("#scissors");
+      const $paper = document.querySelector("#paper");
+      const IMG_URL = "./rsp.png";
+      $computer.style.background = `url(${IMG_URL}) 0 0`;
+      $computer.style.backgroundSize = `auto 200px`;
+      //   const rspX = {
+      //     scissors: "0",
+      //     rock: "-220px",
+      //     paper: "-440px",
+      //   };
+
+      const rspX = ["0px", "-220px", "-440px"];
+      let computerChoice;
+      let score = 0;
+      //일정 시간마다 이미지 바꾸기
+      const changeRsp = () => {
+        // rspX[i]; //i가 0,1,2 랜덤 루프를 타게하면 되잖아.
+        computerChoice = Math.floor(Math.random() * 3);
+        $computer.style.background = `url(${IMG_URL}) ${rspX[computerChoice]} 0`;
+        $computer.style.backgroundSize = "auto 200px";
+      };
+
+      let intervalId = setInterval(changeRsp, 50);
+      let clickable = true;
+      const clickButton = (e) => {
+        if (clickable) {
+          clearInterval(intervalId);
+          clickable = false;
+          // 점수 계산 및 화면 표시
+          // 사용자\컴퓨터   가위(0)    바위(1)    보(2)
+          //      가위       0           -1       -2
+          //      바위       1           0         -1
+          //      보         2           1         0
+          //  *승리 시에는 1또는 -2, 패배시에는 2또는 -1, 무승부에는 0*
+          const myChoice = e.target.id;
+          const scoreTable = {
+            scissors: 0,
+            rock: 1,
+            paper: 2,
+          };
+          const diff = scoreTable[myChoice] - computerChoice;
+          if (diff === 1 || diff === -2) {
+            console.log("승리");
+            score += 1;
+            $score.textContent = score;
+          } else if (diff === 2 || diff === -1) {
+            console.log("패배");
+            score -= 1;
+            $score.textContent = score;
+          } else if (diff === 0) {
+            console.log("무승부");
+          }
+          setTimeout(() => {
+            clickable = true;
+            intervalId = setInterval(changeRsp, 50);
+          }, 1000);
+        }
+
+        if (score === -3) {
+          const retry = confirm(
+            "무려 '컴퓨터'한테 패배하였습니다ㅋㅋ \n다시 할래?",
+          );
+          if (retry) {
+            location.reload();
+          }
+        } else if (score === 3) {
+          const retry = confirm(
+            "승리! 컴퓨터는 인간을 이기지 못한다. \n다시 하시겠습니까?",
+          );
+          if (retry) {
+            location.reload();
+          }
+        }
+      };
+
+      $rock.addEventListener("click", clickButton);
+      $paper.addEventListener("click", clickButton);
+      $scissors.addEventListener("click", clickButton);
+    </script>
+  </body>
+</html>

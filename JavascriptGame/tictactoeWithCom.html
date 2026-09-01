@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>틱택토</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        border: 1px solid black;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let turn = "O";
+      let clickable = true;
+      // 컴퓨터는 내가 선택을 한 후에 움직인다.
+      // cellIndex와 rowIndex의 랜덤값을 선택하되, textContent가 비어있어야함.
+      // 그러면 랜덤값 선택을 먼저하고난뒤, 이것에 대한 textContent가 있다면 랜덤값을 다시 선택하도록?
+      // const randomPick = rows[Math.floor(Math.random()*3)][Math.floor(Math.random()*3)];
+      //그냥 .includes() 쓰면 되는거 아님?
+      const computer = () => {
+        const cells = rows.flat();
+        const emptyCells = cells.filter((cell) => cell.textContent === "");
+        const randomPick =
+          emptyCells[Math.floor(Math.random() * emptyCells.length)];
+        randomPick.textContent = turn;
+        turn = "O";
+      };
+
+      const checkWinner = (target) => {
+        const rowIndex = target.parentNode.rowIndex; //tr의 행 인덱스
+        const cellIndex = target.cellIndex; //td의 열 인덱스
+        let hasWinner = false; //세칸이 같은 모양으로 채워졌는가?
+        if (
+          //가로줄 검사
+          rows[rowIndex][0].textContent === turn &&
+          rows[rowIndex][1].textContent === turn &&
+          rows[rowIndex][2].textContent === turn
+        ) {
+          hasWinner = true;
+        }
+        if (
+          //세로줄 검사
+          rows[0][cellIndex].textContent === turn &&
+          rows[1][cellIndex].textContent === turn &&
+          rows[2][cellIndex].textContent === turn
+        ) {
+          hasWinner = true;
+        }
+        if (
+          //대각선 검사
+          rows[0][0].textContent === turn &&
+          rows[1][1].textContent === turn &&
+          rows[2][2].textContent === turn
+        ) {
+          hasWinner = true;
+        }
+        return hasWinner;
+      };
+      const callback = (e) => {
+        if (e.target.textContent !== "") {
+          //빈칸이 아니라면
+          console.log("빈칸이 아닙니다.");
+          return;
+        } else {
+          //빈칸이면
+          if (!clickable) {
+            return;
+          }
+          console.log("빈칸입니다.");
+          e.target.textContent = turn;
+          clickable = false;
+          let computerId = setTimeout(() => {
+            computer();
+            clickable = true;
+          }, 1000);
+          const hasWinner = checkWinner(e.target);
+          //승자가 있으면
+          if (hasWinner) {
+            $result.textContent = `${turn}님이 승리! 축하합니다!`;
+            $table.removeEventListener("click", callback);
+            clearTimeout(computerId);
+            return;
+          }
+          //승자가 없으면
+          let draw = true;
+          rows.forEach((row) => {
+            row.forEach((cell) => {
+              if (!cell.textContent) {
+                draw = false;
+              }
+            });
+          });
+          if (draw) {
+            $result.textContent = `무승부`;
+            return;
+          }
+          turn = turn === "X" ? "O" : "X";
+        }
+      };
+      const { body } = document;
+      const $table = document.createElement("table");
+      const $result = document.createElement("div"); //결과창
+      const rows = [];
+      for (let i = 1; i <= 3; i++) {
+        const $tr = document.createElement("tr");
+        const cells = [];
+        for (let j = 1; j <= 3; j++) {
+          const $td = document.createElement("td");
+          // $td.addEventListener("click", callback);
+          cells.push($td);
+          $tr.appendChild($td);
+        }
+        rows.push(cells);
+        $table.appendChild($tr);
+
+        //이벤트 버블링 때문에 자식태그 이벤트 발생 => 부모태그에도 동일한 이벤트 발생
+      }
+      $table.addEventListener("click", callback);
+      body.appendChild($table);
+      body.appendChild($result);
+    </script>
+  </body>
+</html>
